@@ -39,3 +39,7 @@ body {
   gap: 10px;
   flex-direction: column;
 }
+
+p{
+  display: flex;
+}
