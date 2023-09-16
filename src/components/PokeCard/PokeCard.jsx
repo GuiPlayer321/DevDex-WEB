@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
 import PokeItem from "../PokeItem/PokeItem";
+import styles from "./PokeCard.module.css";
+import { ThreeDots } from "react-loader-spinner";
 
 export default function PokeCard() {
   const [pokemons, setPokemons] = useState([]);
   const [configApi, setConfigApi] = useState({ offSet: 0, limit: 40 });
+  const [loading, setLoading] = useState(false);
 
   function getApi() {
+    setLoading(true);
     fetch(
       `https://pokeapi.co/api/v2/pokemon?offset=${configApi.offSet}&limit=${configApi.limit}`
     )
@@ -18,6 +22,7 @@ export default function PokeCard() {
 
         const response = await Promise.all(fetchs);
         setPokemons((pokemons) => pokemons.concat(response));
+        setLoading(false);
       })
       .catch((err) => console.log(err));
   }
@@ -32,17 +37,44 @@ export default function PokeCard() {
 
   return (
     <div>
-      <div style={{ display: "flex", margin: 25, justifyContent: "center", gap:10 }}>
-        <button onClick={setLimit}>Todas</button>
-        <button onClick={setLimit}>Gen I</button>
-        <button onClick={setLimit}>Gen II</button>
-        <button onClick={setLimit}>Gen III</button>
-        <button onClick={setLimit}>Gen IV</button>
-        <button onClick={setLimit}>Gen V</button>
-        <button onClick={setLimit}>Gen VI</button>
-        <button onClick={setLimit}>Gen VII</button>
-        <button onClick={setLimit}>Gen VIII</button>
-        <button onClick={setLimit}>Gen IX</button>
+      <div
+        style={{
+          display: "flex",
+          margin: 25,
+          justifyContent: "center",
+          gap: 10,
+        }}
+      >
+        <button className={styles.btn} onClick={setLimit}>
+          Todas
+        </button>
+        <button className={styles.btn} onClick={setLimit}>
+          Gen I
+        </button>
+        <button className={styles.btn} onClick={setLimit}>
+          Gen II
+        </button>
+        <button className={styles.btn} onClick={setLimit}>
+          Gen III
+        </button>
+        <button className={styles.btn} onClick={setLimit}>
+          Gen IV
+        </button>
+        <button className={styles.btn} onClick={setLimit}>
+          Gen V
+        </button>
+        <button className={styles.btn} onClick={setLimit}>
+          Gen VI
+        </button>
+        <button className={styles.btn} onClick={setLimit}>
+          Gen VII
+        </button>
+        <button className={styles.btn} onClick={setLimit}>
+          Gen VIII
+        </button>
+        <button className={styles.btn} onClick={setLimit}>
+          Gen IX
+        </button>
       </div>
       <div
         style={{
@@ -66,7 +98,24 @@ export default function PokeCard() {
         ))}
       </div>
       <div style={{ display: "flex", margin: 25, justifyContent: "center" }}>
-        <button onClick={setLimit}>Carregar mais...</button>
+        {loading ? (
+          
+            <ThreeDots
+              height="50"
+              width="50"
+              radius="9"
+              color="red "
+              ariaLabel="three-dots-loading"
+              wrapperStyle={{justifyContent:'center'}}
+              wrapperClassName=""
+              visible={loading}
+            />
+          
+        ) : (
+          <button className={styles.btnMais} onClick={setLimit}>
+            Carregar mais...
+          </button>
+        )}
       </div>
     </div>
   );

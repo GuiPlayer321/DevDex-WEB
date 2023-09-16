@@ -1,0 +1,24 @@
+.btn {
+  background-color: #f32525e9;
+  color: whitesmoke;
+  border-radius: 5px;
+  font-size: 13px;
+  width: 75px;
+  height: 25px;
+  border-color: #960202;
+}
+
+.btnMais {
+  background-color: #f32525;
+  color: whitesmoke;
+  border-radius: 5px;
+  font-size: 13px;
+  height: 30px;
+  width: 15%;
+}
+
+.btn:hover, .btnMais:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+

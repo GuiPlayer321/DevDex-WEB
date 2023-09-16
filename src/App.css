@@ -4,29 +4,50 @@
   width: 100%;
 }
 
+.logo{
+  width: 12%;
+  display: flex;
+}
+
+.Nav{
+  background-color: #b10f0f;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 60px;
+}
+
+
+/* .Nav {
+  width: 100%;
+  height: 8%;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #f32525;
+  color: whitesmoke;
+} */
+
+.search{
+  min-width: 250px;
+}
+
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.Nav {
-  width: 100%;
-  height: 8%;
-  background-color: red;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  background-color: red;
-  color: whitesmoke;
-}
 
 .Foot {
   width: 100%;
   height: 5%;
   display: flex;
-  background-color: yellow;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  background-color: #f32525;
 }
 
 .Main {
@@ -42,4 +63,12 @@ body {
 
 p{
   display: flex;
+}
+
+.git:hover{
+  cursor: pointer;
+}
+
+.pokeball{
+  color: black;
 }
