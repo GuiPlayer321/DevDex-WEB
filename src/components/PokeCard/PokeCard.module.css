@@ -1,11 +1,11 @@
 .btn {
-  background-color: #f32525e9;
-  color: whitesmoke;
+  background-color: #f8f8f8;
+  color: #f32525;
   border-radius: 5px;
   font-size: 13px;
   width: 75px;
   height: 25px;
-  border-color: #960202;
+  border-color: #f32525;
 }
 
 .btnMais {
@@ -22,3 +22,13 @@
   transform: scale(1.1);
 }
 
+
+.btn:hover, .btnMais:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  color: #f8f8f8;
+  background-color: #f32525;
+}
+.teste:active{
+  background-color: palegreen;
+}

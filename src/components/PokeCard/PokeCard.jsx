@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import PokeItem from "../PokeItem/PokeItem";
 import styles from "./PokeCard.module.css";
 import { ThreeDots } from "react-loader-spinner";
+import api from "./ApiConfig";
 
 export default function PokeCard() {
   const [pokemons, setPokemons] = useState([]);
@@ -31,6 +32,11 @@ export default function PokeCard() {
     setConfigApi({ ...configApi, offSet: configApi.offSet + configApi.limit });
   };
 
+  function setGen(off, lim) {
+    setPokemons([])
+    setConfigApi({ offSet: off, limit: lim });
+  }
+
   useEffect(() => {
     getApi();
   }, [configApi]);
@@ -42,39 +48,18 @@ export default function PokeCard() {
           display: "flex",
           margin: 25,
           justifyContent: "center",
-          gap: 10,
+          gap: 15,
         }}
       >
-        <button className={styles.btn} onClick={setLimit}>
-          Todas
-        </button>
-        <button className={styles.btn} onClick={setLimit}>
-          Gen I
-        </button>
-        <button className={styles.btn} onClick={setLimit}>
-          Gen II
-        </button>
-        <button className={styles.btn} onClick={setLimit}>
-          Gen III
-        </button>
-        <button className={styles.btn} onClick={setLimit}>
-          Gen IV
-        </button>
-        <button className={styles.btn} onClick={setLimit}>
-          Gen V
-        </button>
-        <button className={styles.btn} onClick={setLimit}>
-          Gen VI
-        </button>
-        <button className={styles.btn} onClick={setLimit}>
-          Gen VII
-        </button>
-        <button className={styles.btn} onClick={setLimit}>
-          Gen VIII
-        </button>
-        <button className={styles.btn} onClick={setLimit}>
-          Gen IX
-        </button>
+        {api.map((item) => (
+          <button
+            className={styles.btn}
+            key={item.gen}
+            onClick={() => setGen(item.offSet, item.limit)}
+          >
+            {item.gen}
+          </button>
+        ))}
       </div>
       <div
         style={{
@@ -89,28 +74,23 @@ export default function PokeCard() {
             key={index}
             nome={item.name}
             numero={item.id}
-            imagem={
-              item.sprites.versions["generation-v"]["black-white"].animated
-                .front_default
-            }
+            imagem={item.sprites.front_default}
             tipo={item.types}
           />
         ))}
       </div>
       <div style={{ display: "flex", margin: 25, justifyContent: "center" }}>
         {loading ? (
-          
-            <ThreeDots
-              height="50"
-              width="50"
-              radius="9"
-              color="red "
-              ariaLabel="three-dots-loading"
-              wrapperStyle={{justifyContent:'center'}}
-              wrapperClassName=""
-              visible={loading}
-            />
-          
+          <ThreeDots
+            height="50"
+            width="50"
+            radius="9"
+            color="red "
+            ariaLabel="three-dots-loading"
+            wrapperStyle={{ justifyContent: "center" }}
+            wrapperClassName=""
+            visible={loading}
+          />
         ) : (
           <button className={styles.btnMais} onClick={setLimit}>
             Carregar mais...
