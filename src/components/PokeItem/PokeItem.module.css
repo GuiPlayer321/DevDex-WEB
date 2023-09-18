@@ -1,6 +1,7 @@
 .container {
   display: flex;
-  background-color: teal;
+  background-color:#ebebeb;
+  border: solid 1px #888;
   border-radius: 10px;
   width: 19%;
   margin: 10px;
@@ -8,6 +9,10 @@
   height: 130px;
   justify-content: space-evenly;
   box-shadow:  3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+  background-image: url('../../assets/pokeball.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+
 }
 
 .container:hover{
@@ -21,8 +26,12 @@ img {
 
 .id{
     font-size: 25px;
-    font-weight: 700;
+    font-weight: 500;
     align-self: end;
     justify-items: start;
     margin-bottom: 20px;
+}
+
+.nome{
+  font-size: 20px;
 }

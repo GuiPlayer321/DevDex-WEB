@@ -9,8 +9,8 @@ function App() {
     <div className="App">
 
       <nav className="Nav">
-        <img src={logo} className="logo"/>
-        <input type="text" placeholder="Digite o nome do Pokemon" className="search"/>
+        <img src={logo} className="logo"/>  
+        <input type="text" placeholder="Digite o nome do Pokemon" className="input"/>
         <MdCatchingPokemon color="whitesmoke" size={32}/>
       </nav>
 
