@@ -37,3 +37,29 @@ img {
 .nome{
   font-size: 20px;
 }
+
+.tipo{
+  background-color: #70707050;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1px;
+  border-radius: 10px;
+}
+
+.grass {
+  background-color: #78c850; /* Cor para tipo Grass */
+}
+
+.fire {
+  background-color: #f08030; /* Cor para tipo Fire */
+}
+
+.water {
+  background-color: #6890f0; /* Cor para tipo Water */
+}
+
+.electric {
+  background-color: #f8d030; /* Cor para tipo Electric */
+}
