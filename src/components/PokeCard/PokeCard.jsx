@@ -6,6 +6,7 @@ import api from "./ApiConfig";
 
 export default function PokeCard() {
   const [pokemons, setPokemons] = useState([]);
+  const [poke, setPoke] = useState('');
   const [configApi, setConfigApi] = useState({ offSet: 0, limit: 40 });
   const [loading, setLoading] = useState(false);
 
@@ -26,6 +27,17 @@ export default function PokeCard() {
         setLoading(false);
       })
       .catch((err) => console.log(err));
+  }
+
+  function searchPoke(pok){
+    fetch(`https://pokeapi.co/api/v2/pokemon${pok}`)
+      .then(
+        (response) => response.json()
+      )
+      .then((json) =>{
+        setPokemons(json)
+      })
+      .catch((err) => console.log(err))
   }
 
   const setLimit = () => {

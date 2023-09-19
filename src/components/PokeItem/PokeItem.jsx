@@ -2,8 +2,9 @@ import React from "react";
 import styles from "./PokeItem.module.css";
 
 export default function PokeItem({ nome, tipo, numero, imagem }) {
+  const tipoPokemon = tipo[0].type.name;
   return (
-    <div className={styles.container} onClick={() => console.log("cliquei")}>
+    <div className={`${styles.container} ${styles[tipoPokemon]}`} onClick={() => console.log("cliquei")}>
       <div
         style={{
           /*backgroundColor: "blue", */ width: "53%",
@@ -14,9 +15,9 @@ export default function PokeItem({ nome, tipo, numero, imagem }) {
         <p className={styles.nome}>
           {nome.charAt(0).toUpperCase() + nome.slice(1).toLowerCase()}
         </p>
-        <div style={{ display: "flex", gap: 10 }}>
+        <div style={{}}>
           {tipo.map((type, index) => (
-            <p key={index}>{type.type.name}</p>
+            <p key={index} className={styles.tipo}>{type.type.name}</p>
           ))}
         </div>
       </div>
