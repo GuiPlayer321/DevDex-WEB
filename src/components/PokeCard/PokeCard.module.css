@@ -17,18 +17,19 @@
   width: 15%;
 }
 
-.btn:hover, .btnMais:hover {
+.btn:hover,
+.btnMais:hover {
   cursor: pointer;
   transform: scale(1.1);
 }
 
-
-.btn:hover, .btnMais:hover {
+.btn:hover,
+.btnMais:hover {
   cursor: pointer;
   transform: scale(1.2);
   color: #f8f8f8;
   background-color: #f32525;
 }
-.teste:active{
+.teste:active {
   background-color: palegreen;
 }

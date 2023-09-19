@@ -2,19 +2,23 @@ import { FaGithub } from "react-icons/fa";
 import { MdCatchingPokemon } from "react-icons/md";
 import "./App.css";
 import PokeCard from "../src/components/PokeCard/PokeCard";
-import logo from './assets/logo.png'
+import logo from "./assets/logo.png";
 
 function App() {
   return (
     <div className="App">
-
       <nav className="Nav">
-        <img src={logo} className="logo"/>  
-        <input type="text" placeholder="Digite o nome do Pokemon" className="input"/>
-        <MdCatchingPokemon color="whitesmoke" size={32}/>
+        <img src={logo} className="logo" />
+        <input
+          type="text"
+          placeholder="Digite o nome do Pokemon"
+          className="input"
+        />
+        <MdCatchingPokemon color="whitesmoke" size={32} />
       </nav>
-
-      <PokeCard />
+      <div className="Main">
+        <PokeCard />
+      </div>
 
       <footer className="Foot">
         <FaGithub

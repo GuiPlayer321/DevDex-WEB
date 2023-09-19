@@ -47,7 +47,7 @@ const ConfigAPI = [
   {
     gen: "Gen IX",
     offSet: 890,
-    limit: 1008,
+    limit: 120,
   },
 ];
 
