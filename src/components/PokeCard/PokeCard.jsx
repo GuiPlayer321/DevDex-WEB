@@ -33,7 +33,7 @@ export default function PokeCard() {
   };
 
   function setGen(off, lim) {
-    setPokemons([])
+    setPokemons([]);
     setConfigApi({ offSet: off, limit: lim });
   }
 
@@ -79,7 +79,18 @@ export default function PokeCard() {
           />
         ))}
       </div>
-      <div style={{ display: "flex", margin: 25, justifyContent: "center" }}>
+      <div
+        style={
+          loading
+            ? {
+                display: "flex",
+                margin: 25,
+                justifyContent: "center",
+                height: "100vh",
+              }
+            : { display: "flex", margin: 25, justifyContent: "center" }
+        }
+      >
         {loading ? (
           <ThreeDots
             height="50"
