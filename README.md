@@ -61,7 +61,7 @@ O projeto se encontra no seguinte link
 ## Imagens do projeto 
 
 <img src="/src/assets/readme/home.png">
-<img src="/src/assets/readme/geracao.png.png">
+<img src="/src/assets/readme/geracao.png">
 <img src="/src/assets/readme/busca.png">
 <img src="/src/assets/readme/erro.png">
 
