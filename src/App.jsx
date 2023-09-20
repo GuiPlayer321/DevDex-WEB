@@ -3,34 +3,18 @@ import { MdCatchingPokemon } from "react-icons/md";
 import "./App.css";
 import PokeCard from "../src/components/PokeCard/PokeCard";
 import logo from "./assets/logo.png";
+import { useState } from "react";
+import Home from "./pages/Home/Home.";
 
 function App() {
+
+  const [search, setSearch] = useState()
+
+  
+
   return (
     <div className="App">
-      <nav className="Nav">
-        <img src={logo} className="logo" />
-        <input
-          type="text"
-          placeholder="Digite o nome do Pokemon"
-          className="input"
-        />
-        <MdCatchingPokemon color="whitesmoke" size={32} />
-      </nav>
-      <div className="Main">
-        <PokeCard />
-      </div>
-
-      <footer className="Foot">
-        <FaGithub
-          className="git"
-          onClick={() =>
-            window.location.replace(
-              "https://github.com/GuiPlayer321/DevDex-WEB"
-            )
-          }
-        />
-        <p>Feito por GuiPlayer321 (Guilherme)</p>
-      </footer>
+      <Home/>
     </div>
   );
 }

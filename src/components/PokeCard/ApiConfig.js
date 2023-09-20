@@ -22,11 +22,11 @@ const ConfigAPI = [
   {
     gen: "Gen IV",
     offSet: 386,
-    limit: 151,
+    limit: 152,
   },
   {
     gen: "Gen V",
-    offSet: 494,
+    offSet: 493,
     limit: 156,
   },
   {
