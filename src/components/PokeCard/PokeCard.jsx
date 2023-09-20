@@ -4,9 +4,8 @@ import styles from "./PokeCard.module.css";
 import { ThreeDots } from "react-loader-spinner";
 import api from "./ApiConfig";
 
-export default function PokeCard() {
-  const [pokemons, setPokemons] = useState([]);
-  const [poke, setPoke] = useState('');
+export default function PokeCard({ pokemons, setPokemons}) {
+
   const [configApi, setConfigApi] = useState({ offSet: 0, limit: 40 });
   const [loading, setLoading] = useState(false);
 
@@ -29,17 +28,6 @@ export default function PokeCard() {
       .catch((err) => console.log(err));
   }
 
-  function searchPoke(pok){
-    fetch(`https://pokeapi.co/api/v2/pokemon${pok}`)
-      .then(
-        (response) => response.json()
-      )
-      .then((json) =>{
-        setPokemons(json)
-      })
-      .catch((err) => console.log(err))
-  }
-
   const setLimit = () => {
     setConfigApi({ ...configApi, offSet: configApi.offSet + configApi.limit });
   };
@@ -48,6 +36,8 @@ export default function PokeCard() {
     setPokemons([]);
     setConfigApi({ offSet: off, limit: lim });
   }
+
+
 
   useEffect(() => {
     getApi();
@@ -65,7 +55,7 @@ export default function PokeCard() {
       >
         {api.map((item) => (
           <button
-            className={styles.btn}
+            className={item.limit === configApi.limit? styles.selecionado : styles.btn}
             key={item.gen}
             onClick={() => setGen(item.offSet, item.limit)}
           >
@@ -79,6 +69,8 @@ export default function PokeCard() {
           flexWrap: "wrap",
           justifyContent: "center",
           marginTop: 25,
+          gap:5,
+          width:"100vw"
         }}
       >
         {pokemons.map((item, index) => (

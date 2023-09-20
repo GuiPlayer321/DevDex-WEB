@@ -1,13 +1,18 @@
 import React from "react";
 import styles from "./PokeItem.module.css";
+import pokeball from "../../assets/pokeball.png";
 
 export default function PokeItem({ nome, tipo, numero, imagem }) {
   const tipoPokemon = tipo[0].type.name;
   return (
-    <div className={`${styles.container} ${styles[tipoPokemon]}`} onClick={() => console.log("cliquei")}>
+    <div
+      className={`${styles.container} ${styles[tipoPokemon]}`}
+      onClick={() => console.log("cliquei")}
+    >
+
       <div
         style={{
-          /*backgroundColor: "blue", */ width: "53%",
+          width: "53%",
           padding: 5,
           paddingLeft: 10,
         }}
@@ -15,24 +20,17 @@ export default function PokeItem({ nome, tipo, numero, imagem }) {
         <p className={styles.nome}>
           {nome.charAt(0).toUpperCase() + nome.slice(1).toLowerCase()}
         </p>
-        <div style={{}}>
+        <div style={{ bottom: 0, marginTop: 70 }}>
           {tipo.map((type, index) => (
-            <p key={index} className={styles.tipo}>{type.type.name}</p>
+            <div key={index} className={styles.divtype}>
+              <img src={pokeball} style={{ height:15, width:15 }} />
+              <p>{type.type.name}</p>
+            </div>
+
           ))}
         </div>
       </div>
-      <div
-        style={{
-          //backgroundColor: "red",
-          width: "45%",
-          justifyContent: "center",
-          alignItems: "center",
-          display: "flex",
-          flexDirection: "column",
-          paddingBottom: 10,
-          paddingRight: 10,
-        }}
-      >
+      <div className={styles.dados}>
         <p className={styles.id}>#{numero}</p>
         <img src={imagem} alt={nome} />
       </div>
