@@ -9,6 +9,7 @@ export default function PokeItem({ nome, tipo, numero, imagem }) {
       className={`${styles.container} ${styles[tipoPokemon]}`}
       onClick={() => console.log("cliquei")}
     >
+
       <div
         style={{
           width: "53%",
@@ -25,6 +26,7 @@ export default function PokeItem({ nome, tipo, numero, imagem }) {
               <img src={pokeball} style={{ height:15, width:15 }} />
               <p>{type.type.name}</p>
             </div>
+
           ))}
         </div>
       </div>
