@@ -5,6 +5,7 @@ import { ThreeDots } from "react-loader-spinner";
 import api from "./ApiConfig";
 
 export default function PokeCard({ pokemons, setPokemons}) {
+
   const [configApi, setConfigApi] = useState({ offSet: 0, limit: 40 });
   const [loading, setLoading] = useState(false);
 
@@ -26,8 +27,6 @@ export default function PokeCard({ pokemons, setPokemons}) {
       })
       .catch((err) => console.log(err));
   }
-
-  
 
   const setLimit = () => {
     setConfigApi({ ...configApi, offSet: configApi.offSet + configApi.limit });
