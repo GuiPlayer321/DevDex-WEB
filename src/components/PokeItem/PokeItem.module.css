@@ -21,8 +21,8 @@
 }
 
 img {
-  height: 100%;
-  width: 90%;
+  height: 100px;
+  width: 90px;
 }
 
 .id {
@@ -36,7 +36,7 @@ img {
 
 .nome {
   font-size: 20px;
-  color: whitesmoke;
+  color: #fff;
 }
 
 .dados {
@@ -65,8 +65,7 @@ img {
   gap: 5px;
   background-color: #70707050;
   border-radius: 12px;
-  width: 70%;
-  justify-content: center;
+  width: 85px;
   margin-bottom: 5px;
   height: 35px;
   
