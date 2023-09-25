@@ -1,5 +1,5 @@
 .logo {
-  width: 12%;
+  width: 100px;
   display: flex;
   height: 70%;
 }
@@ -10,7 +10,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 30px;
+  padding: 0 20px;
 }
 
 /* .Nav {

@@ -12,7 +12,7 @@ export default function PokeItem({item}) {
   return (
     <div
       className={`${styles.container} ${styles[tipoPokemon]}`}
-      onClick={() => navigate("detail")}
+      onClick={() => navigate(`detail/${item.id}`)}
     >
 
       <div
