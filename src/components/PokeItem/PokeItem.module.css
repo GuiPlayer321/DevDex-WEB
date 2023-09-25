@@ -1,12 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
 .container {
   display: flex;
   background-color: #ebebeb;
   border: solid 1px #888;
   border-radius: 10px;
-  width: 19%;
+  width: 350px;
   margin: 10px;
   padding: 5px;
-  height: 210px;
+  height: 180px;
   justify-content: space-evenly;
   box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
   background-image: url("../../assets/pokeball2.png");
@@ -21,22 +23,32 @@
 }
 
 img {
-  height: 100px;
-  width: 90px;
+  height: 110px;
+  width: 130px;
+  margin-bottom: 10px;
 }
 
 .id {
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 500;
   align-self: end;
   justify-items: start;
-  margin-top: 40px;
-  margin-right: 18px;
+  margin-bottom: 28px;
+  margin-right: 3px;
 }
 
 .nome {
-  font-size: 20px;
+  font-size: 25px;
   color: #fff;
+  text-transform: capitalize;
+  font-family: 'Poppins';
+}
+
+.maior {
+  font-size: 18px;
+  color: #fff;
+  text-transform: capitalize;
+  font-family: 'Poppins';
 }
 
 .dados {
@@ -50,13 +62,9 @@ img {
 }
 
 .tipo {
-  background-color: #70707050;
-  width: 60%;
-  height: 10%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
+  color: white;
+  text-transform: uppercase;
+  font-size: 12px;
 }
 
 .divtype{
@@ -64,11 +72,10 @@ img {
   align-items: center;
   gap: 5px;
   background-color: #70707050;
-  border-radius: 12px;
-  width: 85px;
+  border-radius: 20px;
+  width: 95px;
   margin-bottom: 5px;
   height: 35px;
-  
 }
 
 

@@ -1,21 +1,20 @@
-import { FaGithub } from "react-icons/fa";
-import { MdCatchingPokemon } from "react-icons/md";
+
 import "./App.css";
-import PokeCard from "../src/components/PokeCard/PokeCard";
-import logo from "./assets/logo.png";
-import { useState } from "react";
 import Home from "./pages/Home/Home.";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Details from "./pages/Details/Details";
 
 function App() {
 
-  const [search, setSearch] = useState()
 
-  
 
   return (
-    <div className="App">
-      <Home/>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/detail" element={<Details/>}/>
+      </Routes>
+    </Router>
   );
 }
 

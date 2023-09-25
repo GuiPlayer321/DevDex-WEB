@@ -50,6 +50,7 @@ export default function PokeCard({ pokemons, setPokemons}) {
           display: "flex",
           margin: 25,
           justifyContent: "center",
+          flexWrap:'wrap',
           gap: 15,
         }}
       >
@@ -70,16 +71,12 @@ export default function PokeCard({ pokemons, setPokemons}) {
           justifyContent: "center",
           marginTop: 25,
           gap:5,
-          width:"100vw"
         }}
       >
         {pokemons.map((item, index) => (
           <PokeItem
             key={index}
-            nome={item.name}
-            numero={item.id}
-            imagem={item.sprites.front_default}
-            tipo={item.types}
+            item={item}
           />
         ))}
       </div>

@@ -36,13 +36,14 @@
   border: 0;
   height: 25px;
   outline: 0;
+  border: solid 0.1px #720b0b;
 }
 
-.botao{
-    background-color: #cf4e4e;
-    border: solid 0.1px #720b0b;
-    padding: 10px;
-    border-radius: 3px;
+.botao {
+  background-color: #cf4e4e;
+  border: solid 0.1px #720b0b;
+  padding: 10px;
+  border-radius: 3px;
 }
 
 .input::placeholder {
@@ -85,4 +86,14 @@ p {
 
 .pokeball {
   color: black;
+}
+
+@media (max-width:700px){
+  .navbar{
+      padding: 0 20px;
+  }
+
+  .input{
+      min-width: auto;
+  }
 }

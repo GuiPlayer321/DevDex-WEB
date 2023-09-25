@@ -18,15 +18,14 @@
   border-color: #f8f8f8;
 }
 
-
-
 .btnMais {
   background-color: #f32525;
   color: whitesmoke;
   border-radius: 5px;
   font-size: 13px;
-  height: 30px;
+  height: 35px;
   width: 15%;
+  border: solid 2px #720b0b;
 }
 
 .btn:hover,
